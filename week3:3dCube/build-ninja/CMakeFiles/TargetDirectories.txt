@@ -1,0 +1,3 @@
+/home/blue-rose/Desktop/coding/Holy-Graph-Plotter/week3:3dCube/build-ninja/CMakeFiles/cube.dir
+/home/blue-rose/Desktop/coding/Holy-Graph-Plotter/week3:3dCube/build-ninja/CMakeFiles/edit_cache.dir
+/home/blue-rose/Desktop/coding/Holy-Graph-Plotter/week3:3dCube/build-ninja/CMakeFiles/rebuild_cache.dir

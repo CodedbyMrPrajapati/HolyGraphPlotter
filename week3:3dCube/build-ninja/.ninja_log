@@ -1,0 +1,5 @@
+# ninja log v5
+1	210	1782399922286234293	CMakeFiles/cube.dir/home/blue-rose/Desktop/coding/Holy-Graph-Plotter/gl_framework.cpp.o	93ea6d8b6f4da078
+1	272	1782399922349236041	CMakeFiles/cube.dir/home/blue-rose/Desktop/coding/Holy-Graph-Plotter/shader_util.cpp.o	5ae6582842dfc4e9
+1	571	1782399922647244313	CMakeFiles/cube.dir/main.cpp.o	dbd493b7e1b092ff
+571	639	1782399922715883738	cube	acf83c7c0f8e310a
