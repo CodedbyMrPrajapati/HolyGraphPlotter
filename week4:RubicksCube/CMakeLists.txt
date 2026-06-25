@@ -1,20 +1,25 @@
 cmake_minimum_required(VERSION 3.15)
-project(Week4Rubik CXX)
+project(Week3Cube CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Source files
-add_executable(rubik main.cpp)
+add_executable(cube
+    main.cpp
+    ../gl_framework.cpp
+    ../shader_util.cpp
+)
 
-# Try finding system packages, fallback to manual links if using MinGW/GCC on Windows
 find_package(OpenGL REQUIRED)
 find_package(GLEW QUIET)
 find_package(glfw3 QUIET)
 
 if(GLEW_FOUND AND glfw3_FOUND)
-    target_link_libraries(rubik PRIVATE OpenGL::GL GLEW::GLEW glfw)
+    target_link_libraries(cube PRIVATE OpenGL::GL GLEW::GLEW glfw)
 else()
-    # MinGW/GCC fallback links
-    target_link_libraries(rubik PRIVATE glew32 glfw3 opengl32 gdi32)
+    if(WIN32)
+        target_link_libraries(cube PRIVATE glew32 glfw3 opengl32 gdi32)
+    else()
+        target_link_libraries(cube PRIVATE ${OPENGL_gl_LIBRARY} -lGLEW -lglfw)
+    endif()
 endif()

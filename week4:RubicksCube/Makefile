@@ -1,14 +1,20 @@
-CXX = g++
-CXXFLAGS = -std=c++17 -O3 -Wall
-LIBS = -lglew32 -lglfw3 -lopengl32 -lgdi32
+OPENGLLIB= -lGL
+GLEWLIB= -lGLEW
+GLFWLIB = -lglfw
+LIBS=$(OPENGLLIB) $(GLEWLIB) $(GLFWLIB)
+LDFLAGS=-L/usr/local/lib
+CPPFLAGS=-I/usr/local/include
+CXXFLAGS=-std=c++17 -Wall -Wextra
 
-TARGET = rubik.exe
-SRCS = main.cpp
+BIN=cube
+SRCS=main.cpp gl_framework.cpp ../shader_util.cpp
+INCLUDES=
 
-all: $(TARGET)
+all: $(BIN)
 
-$(TARGET): $(SRCS)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LIBS)
+
+$(BIN): $(SRCS)
+	g++ $(CXXFLAGS) $(CPPFLAGS) $(SRCS) -o $(BIN) $(LDFLAGS) $(LIBS)
 
 clean:
-	del /Q $(TARGET) 2>NUL || rm -f $(TARGET)
+	rm -f *~ *.o $(BIN)

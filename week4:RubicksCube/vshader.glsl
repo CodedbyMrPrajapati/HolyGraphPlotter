@@ -1,13 +1,17 @@
-#version 430 core
+#version 440 core
 
-layout(location = 0) in vec3 vPosition;
-layout(location = 1) in vec3 vNormal;
+layout(location = 0) in vec4 vPosition;
+layout(location = 1) in vec4 vColor;
+layout(location = 2) in vec3 vNormal;
 
-out vec3 localNormal;
+out vec4 color;
+out vec3 normal;
 
-uniform mat4 uMVP;
+uniform mat4 uModelViewProjectMatrix;
 
-void main() {
-    gl_Position = uMVP * vec4(vPosition, 1.0);
-    localNormal = vNormal;
+void main () 
+{
+  gl_Position = uModelViewProjectMatrix * vPosition;
+  color = vColor;
+  normal = vNormal;
 }
