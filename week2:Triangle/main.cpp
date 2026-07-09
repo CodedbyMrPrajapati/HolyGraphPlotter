@@ -1,6 +1,8 @@
 #include "../gl_framework.hpp"
 #include "../shader_util.hpp"
 
+GLfloat xrot = 0.0f, yrot = 0.0f, zrot = 0.0f;
+
 float points[9] = {
     0.0f, 0.5f, 0.0f,
     0.0f,-0.5f, 0.0f,
